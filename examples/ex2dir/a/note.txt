@@ -1,0 +1,6 @@
+This subdirectory should be complete with files:
+a/1
+a/2
+a/3
+a/note.txt
+a/script.sh (set to executable)
