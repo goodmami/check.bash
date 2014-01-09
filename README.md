@@ -51,12 +51,8 @@ exist "$CDBDIR/check.bash"
 executable "$CDBDIR/examples/ex1.sh"
 ```
 
-And the output (paths abbreviated; also the terminal output will be colored):
-```
-.../check.bash found
-.../examples/ex1.sh found
-.../examples/ex1.sh is executable
-```
+And the output:
+![Output of examples/ex1.sh](examples/screenshots/ex1-out.png "Output of examples/ex1.sh")
 
 Note that `examples/ex1.sh` is "found" before it is checked to be executable. The `executable` command first checks for file existence using the `exist` command.
 
@@ -91,29 +87,6 @@ done
 popd
 ```
 
-This checks a directory for a particular structure. Namely, it should have subdirectories `a/`, `b/`, and `c/`, and these in turn should have files `1`, `2`, and `3` (combined with a `all` quantifier command); a `note` file with 4 possible filenames (no extension or a `.pdf`, `.txt`, or `.doc` extension; possibilities are expressed with the `any` quantifier command); and a `script.sh` file that should be executable. An example of such a directory (intentionally created with some problems) is given in `examples/ex2dir`. Also note that the `check.bash` commands may be used as other shell commands would; in this case it's used in a conditional block (the `exist` and `executable` commmands are only executed if the `directory` command succeeded). Here is the output (again, the output would be colored):
+This checks a directory for a particular structure. Namely, it should have subdirectories `a/`, `b/`, and `c/`, and these in turn should have files `1`, `2`, and `3` (combined with a `all` quantifier command); a `note` file with 4 possible filenames (no extension or a `.pdf`, `.txt`, or `.doc` extension; possibilities are expressed with the `any` quantifier command); and a `script.sh` file that should be executable. An example of such a directory (intentionally created with some problems) is given in `examples/ex2dir`. Also note that the `check.bash` commands may be used as other shell commands would; in this case it's used in a conditional block (the `exist` and `executable` commmands are only executed if the `directory` command succeeded). Here is the output:
 
-```
-Checking examples/ex2dir/
-  a/ should look good
-  b/ should be missing entirely
-  c/ should have several problems
-a directory exists
-a/1 found
-a/2 found
-a/3 found
-a/note.txt found
-a/script.sh found
-a/script.sh is executable
-b directory does not exist
-c directory exists
-c/1 found
-c/2 found
-c/3 cannot be found
-c/note cannot be found
-c/note.pdf cannot be found
-c/note.txt cannot be found
-c/note.doc cannot be found
-c/script.sh found
-c/script.sh is not executable
-```
+![Output of examples/ex2.sh](examples/screenshots/ex2-out.png "Output of examples/ex2.sh")
